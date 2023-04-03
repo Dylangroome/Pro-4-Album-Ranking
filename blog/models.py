@@ -11,15 +11,14 @@ class Genre(models.Model):
 	slug = models.SlugField(null=False, unique=True)
 
 	def __str__(self):
-		return self.title
+		return self.name
 
 
 class Artist(models.Model):
 	name = models.CharField(max_length=70, unique=True)
 	featured_image = CloudinaryField('image', default='placeholder')
-	slug = models.SlugField(null=True, unique=True)
-	albums = models.ManyToManyField(Album, blank=True)
-
+	slug = models.SlugField(max_length=200, unique=True)
+	
 	def __str__(self):
 		return self.name
 
@@ -33,14 +32,15 @@ class Rating(models.Model):
 
 
 class Album(models.Model):
-	Title = models.CharField(max_length=200)
-	Year = models.CharField(max_length=25, blank=True)
-	Rated = models.CharField(max_length=10, blank=True)
-	Released = models.CharField(max_length=25, blank=True)
-	Genre = models.ManyToManyField(Genre, blank=True)
-	Artist = models.ManyToManyField(Artist, blank=True)
+	title = models.CharField(max_length=200)
+	slug = models.SlugField(max_length=200, unique=True)
+	year = models.CharField(max_length=25, blank=True)
+	rated = models.CharField(max_length=10, blank=True)
+	released = models.CharField(max_length=25, blank=True)
+	genre = models.ManyToManyField(Genre, blank=True)
+	artist = models.ManyToManyField(Artist, blank=True)
 	featured_image = CloudinaryField('image', default='placeholder')
-	Ratings = models.ManyToManyField(Rating, blank=True)
+	ratings = models.ManyToManyField(Rating, blank=True)
 
 	def __str__(self):
 		return self.Title
@@ -61,16 +61,15 @@ RATE_CHOICES = [
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                             related_name="comments")
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+	album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="comments")
+	name = models.CharField(max_length=80)
+	email = models.EmailField()
+	body = models.TextField()
+	created_on = models.DateTimeField(auto_now_add=True)
+	approved = models.BooleanField(default=False)
 
-    class Meta:
-        ordering = ["created_on"]
+	class Meta:
+		ordering = ["created_on"]
 
-    def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+	def __str__(self):
+		return f"Comment {self.body} by {self.name}"
