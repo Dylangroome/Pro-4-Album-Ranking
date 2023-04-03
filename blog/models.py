@@ -8,7 +8,6 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Genre(models.Model):
 	title = models.CharField(max_length=25)
-	slug = models.SlugField(null=False, unique=True)
 
 	def __str__(self):
 		return self.name
@@ -17,7 +16,6 @@ class Genre(models.Model):
 class Artist(models.Model):
 	name = models.CharField(max_length=70, unique=True)
 	featured_image = CloudinaryField('image', default='placeholder')
-	slug = models.SlugField(max_length=200, unique=True)
 	
 	def __str__(self):
 		return self.name
@@ -39,8 +37,12 @@ class Album(models.Model):
 	released = models.CharField(max_length=25, blank=True)
 	genre = models.ManyToManyField(Genre, blank=True)
 	artist = models.ManyToManyField(Artist, blank=True)
+	created_on = models.DateTimeField(auto_now_add=True)
 	featured_image = CloudinaryField('image', default='placeholder')
 	ratings = models.ManyToManyField(Rating, blank=True)
+
+	class Meta:
+		ordering = ["created_on"]
 
 	def __str__(self):
 		return self.Title
