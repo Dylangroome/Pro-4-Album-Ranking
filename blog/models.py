@@ -35,6 +35,8 @@ class Album(models.Model):
 	year = models.CharField(max_length=25, blank=True)
 	rated = models.CharField(max_length=10, blank=True)
 	released = models.CharField(max_length=25, blank=True)
+	content = models.TextField()
+	excerpt = models.TextField(blank=True)
 	genre = models.ManyToManyField(Genre, blank=True)
 	artist = models.ManyToManyField(Artist, blank=True)
 	created_on = models.DateTimeField(auto_now_add=True)
@@ -45,7 +47,7 @@ class Album(models.Model):
 		ordering = ["created_on"]
 
 	def __str__(self):
-		return self.Title
+		return self.title
 
 
 RATE_CHOICES = [
