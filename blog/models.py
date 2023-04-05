@@ -40,6 +40,7 @@ class Album(models.Model):
 	genre = models.ManyToManyField(Genre, blank=True)
 	artist = models.ManyToManyField(Artist, blank=True)
 	created_on = models.DateTimeField(auto_now_add=True)
+	status = models.IntegerField(choices=STATUS, default=0)
 	featured_image = CloudinaryField('image', default='placeholder')
 	ratings = models.ManyToManyField(Rating, blank=True)
 
