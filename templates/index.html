@@ -17,7 +17,7 @@
                 <!-- Post preview-->
                 <div class="post-preview">
                     
-                    <a href="post.html">
+                    <a href="{% url 'album_detail' album.slug %}">
                         <h2 class="post-title">{{ album.title }}</h2>
                     </a>
                     <div class="row">

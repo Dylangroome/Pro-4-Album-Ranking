@@ -50,12 +50,9 @@ class Album(models.Model):
     def __str__(self):
         return self.title
            
-    def number_of_likes(self):
-        return self.likes.count()
-
-
+    
 class Comment(models.Model):
-    post = models.ForeignKey(Album, on_delete=models.CASCADE,
+    album = models.ForeignKey(Album, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
