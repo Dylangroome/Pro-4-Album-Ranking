@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Album, Comment
+from .models import Album, Comment, Artist
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -22,3 +22,12 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+
+@admin.register(Artist)
+class Artistdmin(SummernoteModelAdmin):
+
+    list_display = ('title', 'slug',)
+    search_fields = ['title', 'content']
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('content',)

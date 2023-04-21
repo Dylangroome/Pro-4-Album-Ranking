@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -22,11 +23,15 @@ RATE_CHOICES = (
 
 
 class Artist(models.Model):
-    name = models.CharField(max_length=70, unique=True)
+    title = models.CharField(max_length=70, unique=True)
+    slug = models.SlugField(null=True, unique=True)
     featured_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
-        return self.name
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse('artist', args=[self.slug])
 
 
 class Album(models.Model):

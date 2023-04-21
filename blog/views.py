@@ -2,9 +2,10 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.template import loader
 from django.views.generic import DeleteView, UpdateView
 from django.views.generic.base import TemplateView
-from .models import Album
+from .models import Album, Artist
 
 
 class AlbumList(generic.ListView):
@@ -52,6 +53,22 @@ class AlbumDetail(View):
             },
         )
 
+
+class ArtistDetail(View):
+    
+    def artist(request, artist_slug):
+        artist = get_object_or_404(Artist, slug=artist_slug)
+        albums = Album.objects.filter(Artist=artist)
+
+        context = {
+            'artist': artist,
+        }
+        template = loader.get_template('about.html')
+
+        return HttpResponse(template.render(context, request))
+
+
+    
     # def post(self, request, slug, *args, **kwargs):
 
     #     queryset = Album.objects.filter(status=1)
@@ -81,3 +98,16 @@ class AlbumDetail(View):
     #             "enrolled": enrolled,
     #         },
     #     )
+
+
+    # def get_object(self, queryset=None):
+    # """
+    # Check the logged in user is the owner of the object or 404
+    # """
+    # obj = super(MyView, self).get_object(queryset)
+    # if obj.owner != self.request.user:
+    #     raise Http404(
+    #         _("You don't own this object")
+    #     )
+    # return obj
+
