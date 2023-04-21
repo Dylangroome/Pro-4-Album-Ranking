@@ -4,7 +4,7 @@
 
 {% load static %}
 
-
+{% for album in album_list %}
 <!-- Main Content-->
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -17,23 +17,23 @@
                 <!-- Post preview-->
                 <div class="post-preview">
                     
-                    <a href="{% url 'post' %}">
-                        <h2 class="post-title">{{ Album.title }}</h2>
+                    <a href="post.html">
+                        <h2 class="post-title">{{ album.title }}</h2>
                     </a>
                     <div class="row">
                         <div class="col-lg-4 col-md-4 post-meta">
                             <p class="post-meta">
-                                <b>Artist:</b> {{ Album.artist }}
+                                <b>Artist:</b> {{ album.artist }}
                             </p>
                         </div>
                         <div class="col-lg-4 col-md-4 post-meta">
                             <p class="post-meta">
-                            <b>Year:</b> {{ Album.year }}
+                            <b>Year:</b> {{ album.year }}
                             </p>
                         </div>
                         <div class="col-lg-4 col-md-4 post-meta gender">
                             <p class="post-meta">
-                            <b>Genre:</b> {{ Album.genre }}
+                            <b>Genre:</b> {{ album.genre }}
                             </p>
                         </div>
 
@@ -46,5 +46,6 @@
     </div>
    
 </div>
+{% endfor %}
 
 {% endblock %}
