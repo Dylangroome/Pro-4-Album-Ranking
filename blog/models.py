@@ -42,7 +42,7 @@ class Album(models.Model):
     released = models.CharField(max_length=25, blank=True)
     content = models.TextField()
     excerpt = models.TextField(blank=True)
-    genre = models.PositiveSmallIntegerField(choices=GENRE_CHOICES, default=1)
+    genre = models.IntegerField(choices=GENRE_CHOICES, default=1)
     artist = models.ManyToManyField(Artist, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
