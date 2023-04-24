@@ -61,6 +61,7 @@ class ArtistDetail(View):
         albums = Album.objects.filter(Artist=artist)
 
         context = {
+            'album': album,
             'artist': artist,
         }
         template = loader.get_template('about.html')
