@@ -6,6 +6,7 @@ from django.template import loader
 from django.views.generic import DeleteView, UpdateView
 from django.views.generic.base import TemplateView
 from .models import Album, Artist
+from .forms import CommentForm
 
 
 class AlbumList(generic.ListView):
@@ -58,15 +59,44 @@ class ArtistDetail(View):
     
     def artist(request, artist_slug):
         artist = get_object_or_404(Artist, slug=artist_slug)
-        albums = Album.objects.filter(Artist=artist)
+        album = Album.objects.filter(Artist=artist)
+        comments = album.comments.filter(approved=True).order_by("-created_on")
 
         context = {
             'album': album,
             'artist': artist,
+            "comment_form": CommentForm()
         }
         template = loader.get_template('about.html')
 
         return HttpResponse(template.render(context, request))
+    
+    def album(self, request, slug, *args, **kwargs):
+
+        queryset = Album.objects.filter(status=1)
+        album = get_object_or_404(queryset, slug=slug)
+        comments = album.comments.filter(approved=True).order_by("-created_on")
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.album = album
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            "post.html",
+            {
+                "album": album,
+                "comments": comments,
+                "commented": True,
+                "comment_form": comment_form,
+            },
+        )
 
 
     
