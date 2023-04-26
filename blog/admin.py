@@ -25,7 +25,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 @admin.register(Artist)
-class Artistdmin(SummernoteModelAdmin):
+class ArtistAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug',)
     search_fields = ['title', 'content']

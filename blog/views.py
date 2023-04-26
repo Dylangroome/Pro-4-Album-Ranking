@@ -66,7 +66,8 @@ class ArtistDetail(View):
         context = {
             'album': album,
             'artist': artist,
-            "comment_form": CommentForm()
+            "commented": False,
+            "comment_form": CommentForm
         }
         template = loader.get_template('about.html')
 
