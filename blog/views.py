@@ -50,6 +50,7 @@ class AlbumDetail(View):
             {
                 "album": album,
                 "comments": comments,
+                "commented": False,
 
             },
         )
