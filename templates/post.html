@@ -94,6 +94,16 @@
                           <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                       </form>
                       {% endif %}
+                      {% if user.is_authenticated %}
+      
+                      <h3>Leave a rating:</h3>
+                      <p>Posting as: {{ user.username }}</p>
+                      <form method="post" style="margin-top: 1.3em;">
+                          {{ rate_form | crispy }}
+                          {% csrf_token %}
+                          <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                      </form>
+                      {% endif %}
                       {% endif %}
                   </div>
               </div>

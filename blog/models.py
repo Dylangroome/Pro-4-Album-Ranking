@@ -47,7 +47,7 @@ class Album(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
-    rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES, default=7)
+    rate = models.IntegerField(choices=RATE_CHOICES, default=7)
 
     class Meta:
         ordering = ["created_on"]
@@ -72,4 +72,3 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
-# rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES)

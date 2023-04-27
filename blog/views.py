@@ -23,20 +23,6 @@ class AboutTemplateView(TemplateView):
     template_name = 'about.html'
 
 
-class ContactTemplateView(TemplateView):
-    '''
-    For the contact page url
-    '''
-    template_name = 'contact.html'
-
-
-# class PostTemplateView(TemplateView):
-#     '''
-#     For the post page url
-#     '''
-#     template_name = 'post.html'
-
-
 class AlbumDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -53,6 +39,43 @@ class AlbumDetail(View):
                 "commented": False,
                 "comment_form": CommentForm
 
+            },
+        )
+    
+    def album(self, request, slug, *args, **kwargs):
+
+        queryset = Album.objects.filter(status=1)
+        album = get_object_or_404(queryset, slug=slug)
+        comments = album.comments.filter(approved=True).order_by("-created_on")
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.album = album
+            comment.save()
+        else:
+            comment_form = CommentForm()
+        
+        rate_form = RateForm(data=request.POST)
+        if rate_form.is_valid():
+            rate = form.save(commit=False)
+            rate.user = user
+            rate.album = album
+            rate.save()
+        else:
+            rate_form = RateForm()
+
+        return render(
+            request,
+            "post.html",
+            {
+                "album": album,
+                "comments": comments,
+                "commented": True,
+                "comment_form": comment_form,
+                'rate_form': rate_form, 
             },
         )
 
@@ -73,74 +96,4 @@ class ArtistDetail(View):
 
         return HttpResponse(template.render(context, request))
     
-    def album(self, request, slug, *args, **kwargs):
-
-        queryset = Album.objects.filter(status=1)
-        album = get_object_or_404(queryset, slug=slug)
-        comments = album.comments.filter(approved=True).order_by("-created_on")
-
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.username
-            comment = comment_form.save(commit=False)
-            comment.album = album
-            comment.save()
-        else:
-            comment_form = CommentForm()
-
-        return render(
-            request,
-            "post.html",
-            {
-                "album": album,
-                "comments": comments,
-                "commented": True,
-                "comment_form": comment_form,
-            },
-        )
-
-
     
-    # def post(self, request, slug, *args, **kwargs):
-
-    #     queryset = Album.objects.filter(status=1)
-    #     album = get_object_or_404(queryset, slug=slug)
-    #     questions = post.questions.filter(approved=True).order_by("-created_on")  # noqa
-    #     enrolled = False
-    #     if post.no_participants.filter(id=self.request.user.id).exists():
-    #         enrolled = True
-    #     question_form = QuestionForm(data=request.POST)
-    #     if question_form.is_valid():
-    #         question_form.instance.email = request.user.email
-    #         question_form.instance.name = request.user.username
-    #         question = question_form.save(commit=False)
-    #         question.post = post
-    #         question.save()
-    #     else:
-    #         question_form = QuestionForm()
-
-    #     return render(
-    #         request,
-    #         "post_detail.html",
-    #         {
-    #             "post": post,
-    #             "questions": questions,
-    #             "asked": True,
-    #             "question_form": question_form,
-    #             "enrolled": enrolled,
-    #         },
-    #     )
-
-
-    # def get_object(self, queryset=None):
-    # """
-    # Check the logged in user is the owner of the object or 404
-    # """
-    # obj = super(MyView, self).get_object(queryset)
-    # if obj.owner != self.request.user:
-    #     raise Http404(
-    #         _("You don't own this object")
-    #     )
-    # return obj
-
