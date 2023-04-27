@@ -51,6 +51,7 @@ class AlbumDetail(View):
                 "album": album,
                 "comments": comments,
                 "commented": False,
+                "comment_form": CommentForm
 
             },
         )
@@ -67,7 +68,6 @@ class ArtistDetail(View):
             'album': album,
             'artist': artist,
             "commented": False,
-            "comment_form": CommentForm
         }
         template = loader.get_template('about.html')
 
