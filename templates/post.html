@@ -19,15 +19,15 @@
             <div class="text-muted fst-italic mb-2">{{album.excerpt}}</div>
           </header>
           <!-- Preview image figure-->
-          
+          {% if "placeholder" in album.featured_image.url %}
           <figure class="mb-0"><img class="card-img-top" 
             src="#" 
             alt="post-image-default"></figure>
 
-          
-          <figure class="mb-0"><img class="figure-img img-fluid rounded" src=" {{ post.main_image.url }} "
+            {% else %}
+          <figure class="mb-0"><img class="figure-img img-fluid rounded" src=" {{ album.featured_image.url }} "
               alt="post_image"></figure>
-          
+            {% endif %}
           <!-- Post content-->
           <section class="mb-5">
             <div class="row">
