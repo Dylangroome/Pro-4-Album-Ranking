@@ -47,8 +47,7 @@ class Album(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
-    rate = models.IntegerField(choices=RATE_CHOICES, default=7)
-
+    
     class Meta:
         ordering = ["created_on"]
 
@@ -63,6 +62,7 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    rate = models.CharField(max_length=6, choices=RATE_CHOICES, default=7)
     approved = models.BooleanField(default=False)
 
     class Meta:

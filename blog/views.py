@@ -23,6 +23,32 @@ class AboutTemplateView(TemplateView):
     template_name = 'about.html'
 
 
+class Page403(TemplateView):
+    '''
+    For the 403 page url
+    '''
+    template_name = '403.html'
+
+
+class Page404(TemplateView):
+    '''
+    For the 404 page url
+    '''
+    template_name = '404.html'
+
+
+class Page500(TemplateView):
+    '''
+    For the 500 page url
+    '''
+    template_name = '500.html'
+
+
+# class CreateMyModelView(View):
+#     model = Album
+#     form_class = MyModelForm
+
+
 class AlbumDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -75,7 +101,6 @@ class AlbumDetail(View):
                 "comments": comments,
                 "commented": True,
                 "comment_form": comment_form,
-                'rate_form': rate_form, 
             },
         )
 

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- 403 error banner -->
+<div class="container">
+    <div class="card-container">
+        <div class="element-card">
+            <div class="col-12 fw-bold fs-5 text-center">
+                Oops! Looks like we can't show that page.<br><br>
+
+                <a href="{% url 'home' %}">Return to home</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

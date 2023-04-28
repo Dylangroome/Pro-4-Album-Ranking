@@ -32,7 +32,7 @@
           <section class="mb-5">
             <div class="row">
               <div class="col-lg-6 col-md-6">
-                <p><b>Artist:</b> {{album.artis}}</p>
+                <p><b>Artist:</b> {{ album.artist }}</p>
               </div>
               <div class="col-lg-6 col-md-6">
                 <p><b>Year:</b> {{album.year}}</p>
@@ -43,7 +43,7 @@
                 <p><b>Genre:</b> {{album.get_genre_display}}</p>
               </div>
               <div class="col-lg-6 col-md-6">
-                <p><b>Email:</b> {{post.contact_email}}</p>
+                <p><b>Email:</b> {{album.contact_email}}</p>
               </div>
             </div>
             <div class="row">
@@ -54,57 +54,85 @@
             
           </section>
           <section class="mb-5">
-            <div class="row">
-              <div class="col-md-8 card mb-4  mt-3 ">
-                  <h3>Comments:</h3>
-                  <div class="card-body">
-                      <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-                      {% for comment in comments %}
-                      <div class="comments" style="padding: 10px;">
-                          <p class="font-weight-bold">
-                              <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                              {{ comment.name }}
-                              <span class=" text-muted font-weight-normal">
-                                  <!-- The comment's created date goes here -->
-                                  {{ comment.created_on }}
-                              </span> wrote:
-                          </p>
-                          <!-- The body of the comment goes before the | -->
-                          {{ comment.body | linebreaks }}
+            <div class="comments-area">
+              <div class="container">
+                  <div class="row">
+                      <div class="card-container col-lg-8 mb-4 mt-3">
+                          <div class="element-card">
+                              <h3>Comments:</h3>
+                              <hr>
+                              <div class="comments-card">
+                                  <!-- if there is at least one comment -->
+                                  {% if comments %}
+                                  <!-- For loop to iterate through comments -->
+                                  {% for comment in comments %}
+                                  <div class="comments">
+                                      <!-- Body of the comment -->
+                                      {{ comment.body | linebreaksbr }}
+                                      
+                                      <div class="row">
+                                          <div class="col-md-8 post-name-time">
+                                              <p class="fw-bold">
+                                                  {{ comment.name }} on
+                                                  <span>
+                                                      {{ comment.created_on }}
+                                                  </span>
+                                              </p>
+                                          </div>
+                                          {% if comment.name == request.user.username %}
+                                          <div class="col-md-2">
+                                              <a class="btn btn-submit btn-edit fw-bold"
+                                                  href="#">Edit</a>
+                                          </div>
+                                          <div class="col-md-2">
+                                              <a class="btn btn-submit btn-delete fw-bold"
+                                                  href="#">Delete</a>
+                                          </div>
+                                          {% endif %}
+                                      </div>
+                                  </div>
+                                  <hr>
+                                  <!-- end of loop -->
+                                  {% endfor %}
+                                  <!-- else, if there is no comment -->
+                                  {% else %}
+                                  <p>No comments, be the first one!</p>
+                                  {% if not user.is_authenticated %}
+                                  <p>To post a comment, <a href="{% url 'account_login' %}">Log in</a> to our site! <br> If you do
+                                      not have an account, please <a href="{% url 'account_signup' %}">Register</a> here.</p>
+                                  {% endif %}
+                                  {% endif %}
+                              </div>
+                          </div>
                       </div>
-                      <!-- Our for loop ends here -->
-                      {% endfor %}
-                  </div>
-              </div>
-              <div class="col-md-4 card mb-4  mt-3 ">
-                  <div class="card-body">
-                      <!-- For later -->
-                      {% if commented %}
-                      <div class="alert alert-success" role="alert">
-                          Your comment is awaiting approval
+                      <div class="card-container col-lg-4 mb-4 mt-3 ">
+                          {% if user.is_authenticated %}
+                          <!-- Message if comment is posted, edited or deleted -->
+                          <div class="element-card" id="post-comment-card">
+                              {% if commented %}
+                              <div class="alert alert-success" role="alert">
+                                  Your comment has been successfully posted
+                              </div>
+                              {% elif comment_edited %}
+                              <div class="alert alert-success" role="alert">
+                                  Your comment has been successfully edited
+                              </div>
+                              {% elif comment_deleted %}
+                              <div class="alert alert-success" role="alert">
+                                  Your comment has been successfully deleted
+                              </div>
+                              {% endif %}
+                              <!-- Comment form -->
+                              <h3>Leave a comment:</h3>
+                              <p>Posting as: {{ user.username }}</p>
+                              <form method="post">
+                                  {{ comment_form | crispy }}
+                                  {% csrf_token %}
+                                  <button type="submit" class="btn btn-lg btn-post-comment fw-bold">Submit</button>
+                              </form>
+                          </div>
+                          {% endif %}
                       </div>
-                      {% else %}
-                      {% if user.is_authenticated %}
-      
-                      <h3>Leave a comment:</h3>
-                      <p>Posting as: {{ user.username }}</p>
-                      <form method="post" style="margin-top: 1.3em;">
-                          {{ comment_form | crispy }}
-                          {% csrf_token %}
-                          <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                      </form>
-                      {% endif %}
-                      {% if user.is_authenticated %}
-      
-                      <h3>Leave a rating:</h3>
-                      <p>Posting as: {{ user.username }}</p>
-                      <form method="post" style="margin-top: 1.3em;">
-                          {{ rate_form | crispy }}
-                          {% csrf_token %}
-                          <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                      </form>
-                      {% endif %}
-                      {% endif %}
                   </div>
               </div>
           </div>

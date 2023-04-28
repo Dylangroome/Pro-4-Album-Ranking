@@ -6,12 +6,18 @@ from django import forms
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('body',)
+        fields = ('body', 'rate')
 
 
-class RateForm(forms.ModelForm):
-    rate = forms.ChoiceField(choices=RATE_CHOICES, widget=forms.Select(), required=True)
+# class MyModelForm(forms.ModelForm):
+#     class Meta:
+#         model = Album
+#         fields = ['rate',]
 
-    class Meta:
-        model = Album
-        fields = ('rate',)
+
+# class RateForm(forms.ModelForm):
+#     rate = forms.ChoiceField(choices=RATE_CHOICES, widget=forms.Select(), required=True)
+
+#     class Meta:
+#         model = Album
+#         fields = ('rate',)
