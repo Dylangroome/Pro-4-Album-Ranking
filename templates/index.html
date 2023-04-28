@@ -8,6 +8,13 @@
 <!-- Main Content-->
 <main>
 
+    <div class="p-4 p-md-5 mb-4 rounded text-bg-blue">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 fst-italic">Greatest Hip-Hop Albums of All Time</h1>
+          <p class="lead my-3">These are the albums that have defined hip-hop history — from Run-DMC to Playboi Carti, from G-funk to drill, from the Bronx to Houston, and beyond.</p>
+          <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+        </div>
+      </div>
   
   <div class="row">
 
@@ -15,7 +22,7 @@
     <div class="col-12 mt-3 left">
         <div class="row">
           {% for album in album_list %}
-            <div class="div col-md-6 col-lg-3 card-container">
+            <div class="div col-md-6 col-lg-3 card-container px-3">
                 <div class="div index-card mb-3">
                     <a href="{% url 'album_detail' album.slug  %}" class="stock-link">
                         <div class="div card-body">
