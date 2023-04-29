@@ -44,11 +44,6 @@ class Page500(TemplateView):
     template_name = '500.html'
 
 
-# class CreateMyModelView(View):
-#     model = Album
-#     form_class = MyModelForm
-
-
 class AlbumDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
