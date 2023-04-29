@@ -68,7 +68,7 @@ class AlbumDetail(View):
             },
         )
     
-    def album(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
 
         queryset = Album.objects.filter(status=1)
         album = get_object_or_404(queryset, slug=slug)
@@ -81,17 +81,10 @@ class AlbumDetail(View):
             comment = comment_form.save(commit=False)
             comment.album = album
             comment.save()
+            message.success(request,
+                            'Your comment has been uploaded for approval')
         else:
             comment_form = CommentForm()
-        
-        rate_form = RateForm(data=request.POST)
-        if rate_form.is_valid():
-            rate = form.save(commit=False)
-            rate.user = user
-            rate.album = album
-            rate.save()
-        else:
-            rate_form = RateForm()
 
         return render(
             request,
@@ -107,18 +100,18 @@ class AlbumDetail(View):
 
 class ArtistDetail(View):
     
-    def artist(request, artist_slug):
-        artist = get_object_or_404(Artist, slug=artist_slug)
-        album = Album.objects.filter(Artist=artist)
-        comments = album.comments.filter(approved=True).order_by("-created_on")
+    def get(self, request, pk):
+        artist = get_object_or_404(Artist, pk=pk)
+        album = Album.objects.filter(artist=artist)
 
         context = {
             'album': album,
             'artist': artist,
-            "commented": False,
         }
-        template = loader.get_template('about.html')
-
-        return HttpResponse(template.render(context, request))
+        return render(
+            request,
+            "artist.html",
+            context,
+        )
     
     

@@ -32,7 +32,11 @@
           <section class="mb-5">
             <div class="row">
               <div class="col-lg-6 col-md-6">
-                <p><b>Artist:</b> {{ album.artist }}</p>
+                
+                <p><b>Artist:</b> {% for artist in album.artist.all %}
+                      {{artist.title}} <a href="{% url 'artist' artist.pk %}">see details </a>
+                  {% endfor %}</p>
+                
               </div>
               <div class="col-lg-6 col-md-6">
                 <p><b>Year:</b> {{album.year}}</p>
