@@ -15,12 +15,23 @@ class AlbumAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'body', 'album', 'created_on', 'approved')
+    '''
+    Add the comment models to the admin panel
+    apply summernote to the comment text field
+    add approved/not approved filters and serach
+    functionalities
+    '''
+    list_display = ('name', 'body', 'rate', 'album',
+                    'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'body')
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):
+        '''
+        Give the admin the possibility to approve
+        comments
+        '''
         queryset.update(approved=True)
 
 

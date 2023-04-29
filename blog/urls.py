@@ -5,6 +5,7 @@ urlpatterns = [
     path("", views.AlbumList.as_view(), name="home"),
     path('about/', views.AboutTemplateView.as_view(), name='about'),
     path('<slug:slug>/', views.AlbumDetail.as_view(), name='album_detail'),
+    path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path('artist_slug/<int:pk>', views.ArtistDetail.as_view(), name='artist'),
 
     path('403', views.Page403.as_view(), name='403'),

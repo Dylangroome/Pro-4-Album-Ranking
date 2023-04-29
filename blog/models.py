@@ -47,12 +47,17 @@ class Album(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
+    likes = models.ManyToManyField(
+        User, related_name='blogpost_like', blank=True)
     
     class Meta:
         ordering = ["created_on"]
 
     def __str__(self):
         return self.title
+    
+    def number_of_likes(self):
+        return self.likes.count()
            
     
 class Comment(models.Model):
@@ -62,8 +67,8 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    rate = models.CharField(max_length=6, choices=RATE_CHOICES, default=7)
     approved = models.BooleanField(default=False)
+    rate = models.CharField(max_length=6, choices=RATE_CHOICES, default=7)
 
     class Meta:
         ordering = ["created_on"]

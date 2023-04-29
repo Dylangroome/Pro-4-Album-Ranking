@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 <body>
 
@@ -54,6 +54,34 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 mx-auto">
                 <p>{{album.content | safe }}</p>
+                <div class="row">
+
+                  <div class="col-1">
+                      <strong>
+                          {% if user.is_authenticated %}
+                          <form class="d-inline" action="{% url 'post_like' album.slug %}" method="POST">
+                              {% csrf_token %}
+                              {% if liked %}
+                              <button type="submit" name="blogpost_id" value="{{album.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                              {% else %}
+                              <button type="submit" name="blogpost_id" value="{{album.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                              {% endif %}
+                          </form>
+                          {% else %}
+                          <span class="text-secondary"><i class="far fa-heart"></i></span>
+                          {% endif %}
+                      <!-- The number of likes goes before the closing strong tag -->
+                      <span class="text-secondary">{{ album.number_of_likes }} </span>
+                      </strong>
+                  </div>
+                  <div class="col-1">
+                      {% with comments.count as total_comments %}
+                      <strong class="text-secondary"><i class="far fa-comments"></i>
+                          <!-- Our total_comments variable goes before the closing strong tag -->
+                          {{ total_comments }}</strong>
+                      {% endwith %}
+                  </div>
+              </div>
               </div>
             </div>
             
@@ -74,6 +102,25 @@
                                   <div class="comments">
                                       <!-- Body of the comment -->
                                       {{ comment.body | linebreaksbr }}
+                                      <p>
+                                        {% if comment.rate == 1 %}
+                                        Rating: <span class="text-success fw-bold"><i class="fas fa-arrow-up"></i>
+                                            Bullish</span>
+                                        {% elif comment.rate == 2 %}
+                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                            Bearish</span>
+                                        
+                                        {% elif comment.rate == 2 %}
+                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                            Bearish</span>
+                                        
+                                        {% elif comment.rate == 2 %}
+                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                            Bearish</span>
+                                        {% else %}
+                                        Sentiment: <span class="fw-bold"><i class="fas fa-shield-alt"></i> Hold</span>
+                                        {% endif %}
+                                    </p>
                                       
                                       <div class="row">
                                           <div class="col-md-8 post-name-time">
@@ -116,7 +163,7 @@
                           <div class="element-card" id="post-comment-card">
                               {% if commented %}
                               <div class="alert alert-success" role="alert">
-                                  Your comment has been successfully posted
+                                  Your comment is waiting approval
                               </div>
                               {% elif comment_edited %}
                               <div class="alert alert-success" role="alert">
@@ -133,6 +180,7 @@
                               <form method="post">
                                   {{ comment_form | crispy }}
                                   {% csrf_token %}
+                                  {{form.as_p}}
                                   <button type="submit" class="btn btn-lg btn-post-comment fw-bold">Submit</button>
                               </form>
                           </div>

@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.template import loader
 from django.views.generic import DeleteView, UpdateView
 from django.views.generic.base import TemplateView
-from .models import Album, Artist
+from .models import Album, Artist, Comment
 from .forms import CommentForm
 
 
@@ -50,6 +50,9 @@ class AlbumDetail(View):
         queryset = Album.objects.filter(status=1)
         album = get_object_or_404(queryset, slug=slug)
         comments = album.comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        if album.likes.filter(id=self.request.user.id).exists():
+            liked = True
 
         return render(
             request,
@@ -58,6 +61,7 @@ class AlbumDetail(View):
                 "album": album,
                 "comments": comments,
                 "commented": False,
+                "liked": liked,
                 "comment_form": CommentForm
 
             },
@@ -68,6 +72,9 @@ class AlbumDetail(View):
         queryset = Album.objects.filter(status=1)
         album = get_object_or_404(queryset, slug=slug)
         comments = album.comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        if album.likes.filter(id=self.request.user.id).exists():
+            liked = True
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -76,6 +83,7 @@ class AlbumDetail(View):
             comment = comment_form.save(commit=False)
             comment.album = album
             comment.save()
+            comment.approved = True
             message.success(request,
                             'Your comment has been uploaded for approval')
         else:
@@ -89,6 +97,7 @@ class AlbumDetail(View):
                 "comments": comments,
                 "commented": True,
                 "comment_form": comment_form,
+                "liked": liked
             },
         )
 
@@ -110,3 +119,13 @@ class ArtistDetail(View):
         )
     
     
+class PostLike(View):
+    
+    def post(self, request, slug, *args, **kwargs):
+        album = get_object_or_404(Album, slug=slug)
+        if album.likes.filter(id=request.user.id).exists():
+            album.likes.remove(request.user)
+        else:
+            album.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('album_detail', args=[slug]))
