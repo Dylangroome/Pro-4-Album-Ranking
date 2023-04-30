@@ -157,36 +157,22 @@ Dylan Groome
 - The user will be able to edit their comment using a form.
 
 
-- The user will be able to delete their comment after being prompted and can go back if desired or will proceed and receive a success message:
-
-<img width="651" alt="Screenshot 2023-04-30 at 08 31 41" src="https://user-images.githubusercontent.com/108524172/235341391-a50d8a80-ac1f-48af-abc9-9645e9bf38c2.png">
-
-<img width="719" alt="Screenshot 2023-04-30 at 08 32 21" src="https://user-images.githubusercontent.com/108524172/235341419-7377d91d-9a75-4f8b-9e20-4f4e6fa2664d.png">
-
-<img width="490" alt="Screenshot 2023-04-30 at 08 33 20" src="https://user-images.githubusercontent.com/108524172/235341440-a7101109-7de5-45e3-9af6-2740d6b5579c.png">
+- The user will be able to delete their comment:
 
 
 ### Register 
 - The user will be able to easily sign up as a user using the below form.
 - If users are already registered, there is a link to easily navigate to login instead
 
-<img width="701" alt="image" src="https://user-images.githubusercontent.com/97494262/210072154-73833448-d460-49f4-958f-5ba1ebd5dae8.png">
+<img width="476" alt="Screenshot 2023-04-30 at 08 35 33" src="https://user-images.githubusercontent.com/108524172/235341505-395f68fe-20ca-424f-b2ab-676a1452c640.png">
+
 
 ### Login/Logout 
 - The users can easily sign in using the below form with an option to 'remember me' if desired.
 - If a user hasn't registered, there is a link to easily navigate to sign up instead.
 
-<img width="574" alt="image" src="https://user-images.githubusercontent.com/97494262/210072279-5f61cc40-a083-4994-905d-8edbfc3da545.png">
+<img width="650" alt="Screenshot 2023-04-30 at 08 36 23" src="https://user-images.githubusercontent.com/108524172/235341533-ed85a52d-b991-438e-98a0-94f7481c0758.png">
 
-- The user is prompted with a message before logging out:
-
-<img width="439" alt="image" src="https://user-images.githubusercontent.com/97494262/210072389-f62bc7ca-1877-4ec5-8ff3-a7a14f74f583.png">
-
-- The user will receive a message that disappears after 3 seconds to say they have logged in/logged out:
-
-<img width="694" alt="image" src="https://user-images.githubusercontent.com/97494262/210072803-acb43896-c62a-4e41-803f-0aefaf0cc50c.png">
-
-<img width="704" alt="image" src="https://user-images.githubusercontent.com/97494262/210072771-813c77b7-c54c-4d51-b8ef-55683a9a3d2e.png">
 
 ### Footer
 - The footer links directly to the social media pages of the plant care blog.
