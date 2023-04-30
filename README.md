@@ -275,7 +275,8 @@ The application has been tested with Chrome Dev Tools Lighthouse Testing which t
 * SEO
 
 ### Home Page
-![Home page](static/readme/Homepage-lighthouse.jpg)
+![Home page]<img width="652" alt="Screenshot 2023-04-30 at 09 33 38" src="https://user-images.githubusercontent.com/108524172/235343675-d49cf29b-b2f0-4c41-9be9-35b612ba0638.png">
+
 
 ### Room Page
 ![Room page](static/readme/room-lighthouse.jpg)
