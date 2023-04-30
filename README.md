@@ -302,25 +302,10 @@ When running my CSS code through the [CSS Validation service](https://jigsaw.w3.
 
 
 ## Python Vaildator
-When running my code through the [CI Python Linter Validation](https://pep8ci.herokuapp.com/) I had no bugs or errors. Ive decided to ignore the 2 lines too long errors
+When running my code through the [CI Python Linter Validation](https://pep8ci.herokuapp.com/) I had no bugs or errors.
 
-This is in my webapp - admin.py
 
-![Python screenshot](static/readme/python-1.jpg)
-
-This is in my webapp - forms.py
-
-![Python screenshot](static/readme/python-2.jpg)
-
-This is in my webapp - urls.py
-
-![Python screenshot](static/readme/python-3.jpg)
-
-This is in my webapp - views.py
-
-![Python screenshot](static/readme/python-4.jpg)
-
-![Python screenshot](static/readme/python-5.jpg)
+<img width="1364" alt="Screenshot 2023-04-30 at 10 13 22" src="https://user-images.githubusercontent.com/108524172/235345326-5da73713-60b7-4325-9995-14f85123a1d8.png">
 
 
 ## JSHint Validator
