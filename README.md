@@ -311,17 +311,15 @@ When running my code through the [CI Python Linter Validation](https://pep8ci.he
 ## JSHint Validator
 When running my JavaScript through [JSHint validator](https://jshint.com/) I had no bugs or erros.
 
-* This is for the datepicker
 
-![Javascript screenshot](static/readme/escaperoom-js.jpg)
+![Javascript screenshot]
 
-* This is for the map. I have a couple undefined variable however I used this website to write the code. [Google maps code](https://developers.google.com/maps/documentation/javascript/adding-a-google-map)
+<img width="1047" alt="Screenshot 2023-04-30 at 10 17 38" src="https://user-images.githubusercontent.com/108524172/235345477-3b0459d2-cb4e-4634-bfca-49182c91a671.png">
 
-![Javascript maps screenshot](static/readme/escaperoom-jsvalidator.jpg)
 
 ## Defects
 
-Phone number allows the user to add letters. This is ok as its low level. The email is more reliable and will be used to contact the user first.
+No defects
 
 ## Manual
 
@@ -335,33 +333,23 @@ I manually tested all buttons, forms and links to make sure the correct action t
 | --- | --- | --- |
 | logo   | Takes you to the home page     | PASS    | 
 | Home link     |   Takes you to the home page     | PASS      |
-| Rooms link   | Takes you to the rooms page     | PASS    | 
-| Book link     |   Takes you to the booking page or sign in/sign up page     | PASS      |
 | login/sign up link   | Takes you to the sign in page     | PASS    | 
 
-### Footer
-
-| What is being tested | Whats supposed to happen | Pass/Fail |
-| --- | --- | --- |
-| google maps   | allows you to see the location     | PASS    | 
-| Facebook link     |   Takes you to the facebook page     | PASS      |
-| Instagram link   | Takes you to the instagram page     | PASS    | 
-| Twitter link     |   Takes you to the twitter page     | PASS      |
 
 ### Home page
 
 | What is being tested | Whats supposed to happen | Pass/Fail |
 | --- | --- | --- |
-| hero button   | Takes you to the booking page or sign in/sign up page     | PASS    | 
-| popular room link     |   Takes you to the booking page or sign in/sign up page     | PASS      |
+| album title   | Takes you to the album page     | PASS    | 
+| album image     |   Takes you to the album page   | PASS      |
 
-### Rooms page
+### Artist page
 
 | What is being tested | Whats supposed to happen | Pass/Fail |
 | --- | --- | --- |
-| rooms book button   | Takes you to the booking page or sign in/sign up page     | PASS    |
+| artist detail paage   | Takes you to the artist detail page      | PASS    |
 
-### Create an account or Sign in to make a booking page
+### Create an account or Sign in 
 
 | What is being tested | Whats supposed to happen | Pass/Fail |
 | --- | --- | --- |
@@ -384,52 +372,33 @@ I manually tested all buttons, forms and links to make sure the correct action t
 | All inputs   | make sure they're all valid   | PASS    | 
 | sign in button     |   Sign in to your account and redirects to home page     | PASS      |
 
-### Nav bar dropdown once logged in
 
-| What is being tested | Whats supposed to happen | Pass/Fail |
-| --- | --- | --- |
-| Dropdown   | brings a dropdown for two options   | PASS    | 
-| booking link   | redirects to manage booking page   | PASS    | 
-| logout link     |   takes you to confirm logout     | PASS      |
-
-### Booking page
+### comment/rate page
 
 | What is being tested | Whats supposed to happen | Pass/Fail |
 | --- | --- | --- |
 | All inputs   | make sure all inputs are valid before submitting   | PASS    | 
-| datepicker   | datepicker should appear   | PASS    |
-| timepicker   | timepicker should appear   | PASS    | 
 | submit button   | submit form and a confirmation message appears on new page   | PASS    | 
 
-### Manage booking page
+### edit comment page
 
 | What is being tested | Whats supposed to happen | Pass/Fail |
 | --- | --- | --- |
-| Update button   | takes you to the booking form   | PASS    | 
-| Cancel button   | bbrings up an alert to confirm cancel   | PASS    |
+| edit button   | takes you to the edit form   | PASS    | 
 
-### Manage booking bo booking page
+
+### delete comment page
 
 | What is being tested | Whats supposed to happen | Pass/Fail |
 | --- | --- | --- |
-| Book button   | takes you to the booking form   | PASS    | 
+| delete    | deletes comments   | PASS    | 
 
 
 
 # Security Features
 
-* Users cannot deduce the delete url and delete others bookings, they get a custom 500 error page if they do this when not logged in and a warning message if they are authenticated
+* Users cannot deduce the delete url and delete others comments
 
-* Users cannot deduce the update ulr and update others’ bookings, they get a custom 500 error page if they attempt to do this.
-
-* Booking Update: Message Failure trying to book a time already booked
-* Booking Update: Message failure if not logged in
-* Booking Update: Message failure if they dont own booking
-* Booking Cancel: Message Failure if not logged in
-* Booking Cancel: Message failure if they dont own booking
-* Place Booking: User not logged in
-* Place Booking: Time & room already booked
-* 500 Page: This can be activated for many reasons, but you are able to get there if you try to delete a booking that you don’t own, or if you try to access a booking that doesn’t exist
 
 ## User authentication
 * Django's all auth was used for login and sign up functionality.
@@ -443,33 +412,7 @@ I manually tested all buttons, forms and links to make sure the correct action t
 
 # Bugs
 
-## Solved
-
-* I had some contrasting issues which I fixed by using devtools and using their recommended colours
-
-![Contrast](static/readme/readme-contrast1.jpg)
-
-* I had two main bugs in my project. These two bugs would allow hackers to delete and update someone else's bookings. I first had to check if the user that was trying to update or cancel the booking, owned that booking. I done that through this code - 
-
-![Bug](static/readme/escaperoom-bug.jpg)
-
-* Then I had to write an if statement to allow the authenticated user to continue their action. If not they get a custom 500 error page.
-
-![500](static/readme/escaperoom-bug500.jpg)
-
-* I had an issue when refresing on thank you booking page, it sends user another email. I had my email in the wrong section of my code and was a simple fix with a quick move. 
-
-![Email code](static/readme/escaperoom-bugemail.jpg)
-
-* I also had a bug with my messages. If a user were to sign in and sign out, then sign in to another account you would get a long list of messages appear on the my bookings page.
-
-![Message bug](static/readme/escaperoom-bugmessage.jpg)
-
-* To fix this I moved my for message loop out of my_booking.html into the base.html. This meant that the message would appear one at a time instead of a build up of messages once you opened the my_booking.html.
-
-## Left to solve
-
-There are no more bugs to solve as of 18/01/2023
+No bugs
 
 
 ## TECHNOLOGIES USED
@@ -488,55 +431,36 @@ There are no more bugs to solve as of 18/01/2023
 **Step 1:** Create a new app in Heroku, choose a unique name and region.
 **Step 2:** Login to ElephantSQL, access the dashboard and create a new instance (input a name, select a region).
 **Step 3:** Return to dashboard, copy the database URL:
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/97494262/209531384-85d95cc3-a381-4c3c-b56f-215238e0daf8.png">
+
 
 **Step 4:** Create env.py file (ensure it is included in .gitignore file) and add environment the below variables. Paste the URL from above:
 
-<img width="372" alt="image" src="https://user-images.githubusercontent.com/97494262/209531222-599282ee-2c54-490f-b543-1f09e5255490.png">
+
 
 **Step 5:** Include a secret key in the variables:
 
-<img width="800" alt="Screenshot 2022-12-26 at 11 25 13" src="https://user-images.githubusercontent.com/97494262/209531979-9ba177cc-3e44-48a7-80dc-884d06932f54.png">
 
-**Step 6:** Include the below code to settings.py file:
 
-<img width="301" alt="image" src="https://user-images.githubusercontent.com/97494262/209532128-acaa1e29-edea-45c3-93ce-2caaf0f71862.png">
+**Step 6:** Link the database in settings.py and migrate then push to GitHub:
 
-**Step 7:** Link the database in settings.py and migrate then push to GitHub:
 
-<img width="303" alt="image" src="https://user-images.githubusercontent.com/97494262/209532393-5283592f-5caf-4e81-b3fd-9d20bd62b111.png">
+**Step 7:** In Heroku, add three config vars:
 
-**Step 8:** In Heroku, add three config vars:
 
-<img width="243" alt="image" src="https://user-images.githubusercontent.com/97494262/209532605-04bff00b-951f-4084-9ad5-6eff111ac6bf.png">
+**Step 8:** Login to Cloudinary, copy the API Environmental variable to dashboard and add to env.py:
 
-<img width="350" alt="image" src="https://user-images.githubusercontent.com/97494262/209532533-e9b3d879-a40a-4335-a56b-3c0e5c370a8a.png">
 
-**Step 9:** Login to Cloudinary, copy the API Environmental variable to dashboard and add to env.py (see screenshot above) & to Heroku config vars:
+**Step 9:** Add cloudinary to installed apps in settings.py, add static/media file settings:
 
-<img width="571" alt="image" src="https://user-images.githubusercontent.com/97494262/209533286-4a79143c-6568-4055-99fc-76dd5821a02b.png">
 
-**Step 10:** Add cloudinary to installed apps in settings.py, add static/media file settings:
+**Step 10:** Add template directories in settings.py, add Heroku host name to allowed hosts and add directory files:
 
-<img width="407" alt="image" src="https://user-images.githubusercontent.com/97494262/209533445-8f6670c5-490b-4294-95cf-febaaaed2ab2.png">
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/209533629-ab3fb31b-f096-4305-996e-970e4c950a3f.png">
+**Step 11:** Create a Procfile, then commit and push to GitHub:
 
-**Step 11:** Add template directories in settings.py, add Heroku host name to allowed hosts and add directory files:
 
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/97494262/209533879-b8284837-e7a1-4315-83e6-9b88d2125882.png">
+**Step 12:** Connect GitHub account in Heroku, connect and deploy branch. Open app and check:
 
-<img width="501" alt="image" src="https://user-images.githubusercontent.com/97494262/209534100-46723f98-7bd6-40ed-91c1-5226ad6e950d.png">
-
-<img width="313" alt="image" src="https://user-images.githubusercontent.com/97494262/209534271-772afed4-f299-45dc-b72d-d0843b7ad189.png">
-
-**Step 12:** Create a Procfile, then commit and push to GitHub:
-
-<img width="504" alt="image" src="https://user-images.githubusercontent.com/97494262/209534389-5b0cdd3c-54f7-44e8-8a21-99068431365a.png">
-
-**Step 13:** Connect GitHub account in Heroku, connect and deploy branch. Open app and check:
-
-<img width="421" alt="image" src="https://user-images.githubusercontent.com/97494262/209534580-c03fa4fd-8e52-487b-8ecc-23563fd30327.png">
 
 ## CREDITS
 - The Code Institute 'I Think, Therefore I Blog' walkthrough project assisted and guided in the setup and basic structure of this project.
