@@ -8,7 +8,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body', 'rate')
         labels = {
-            "body": "Share your idea on this ticker",
+            "body": "Share your idea on this Album",
         }
 
 

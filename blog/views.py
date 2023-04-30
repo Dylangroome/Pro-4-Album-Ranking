@@ -18,13 +18,6 @@ class AlbumList(generic.ListView):
     paginate_by = 6
 
 
-class AboutTemplateView(TemplateView):
-    '''
-    For the about page url
-    '''
-    template_name = 'about.html'
-
-
 class Page403(TemplateView):
     '''
     For the 403 page url
