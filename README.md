@@ -135,36 +135,36 @@ Dylan Groome
 
 
 ### Likes
-- If the user isn't logged in, they will see the below information:
+- If the user is logged in, they will be able to add a like:
 
-<img width="673" alt="image" src="https://user-images.githubusercontent.com/97494262/210071488-dcd28c40-fe6c-418f-92f9-090d2cba1465.png">
+<img width="170" alt="Screenshot 2023-04-30 at 08 28 07" src="https://user-images.githubusercontent.com/108524172/235341263-dc28d642-8cb9-420f-b390-fe400414cba8.png">
 
-- If the user is logged in, they will be able to like the post:
-
-<img width="284" alt="image" src="https://user-images.githubusercontent.com/97494262/210071552-630d2e30-1c78-458f-83d8-4b8122a6c7c0.png">
 
 - The user is able to easily return to the home page using the go back button or clicking the logo at the top of the page.
 
 ### Comments
 - If a post doesn't have any comments, the user will see the below if not logged in:
 
-<img width="481" alt="image" src="https://user-images.githubusercontent.com/97494262/210071767-5a59d9be-2797-4f93-8de8-e647fa16103e.png">
+<img width="653" alt="Screenshot 2023-04-30 at 08 29 12" src="https://user-images.githubusercontent.com/108524172/235341304-1c7e8141-587c-4c1a-a5fd-3adb943b60a8.png">
 
-- If logged in, users will be encouraged to share their experience in caring for the plant they've read about:
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210071679-732036f7-0a99-4d22-a807-b822c2545ce7.png"> 
+- If logged in, users will be encouraged to share their experience:
 
-- The user will be able to edit their comment using a form and be alerted using a message that disappears after 3 seconds.
+<img width="1001" alt="Screenshot 2023-04-30 at 08 30 01" src="https://user-images.githubusercontent.com/108524172/235341342-7febdfb1-23b9-4d09-b11f-60eb8412c244.png">
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210083125-faa24f47-ec2b-432f-ac90-105375a49f08.png">
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210083087-7ff6c85b-1770-4f47-b723-d03d993b955f.png">
+
+- The user will be able to edit their comment using a form.
+
 
 - The user will be able to delete their comment after being prompted and can go back if desired or will proceed and receive a success message:
 
-<img width="486" alt="Screenshot 2022-12-30 at 14 19 16" src="https://user-images.githubusercontent.com/97494262/210080212-009dfbe4-787d-448f-b498-97e3add086ae.png">
+<img width="651" alt="Screenshot 2023-04-30 at 08 31 41" src="https://user-images.githubusercontent.com/108524172/235341391-a50d8a80-ac1f-48af-abc9-9645e9bf38c2.png">
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210080130-61cd8839-a2b1-4b88-a7cf-227fe27beb57.png">
+<img width="719" alt="Screenshot 2023-04-30 at 08 32 21" src="https://user-images.githubusercontent.com/108524172/235341419-7377d91d-9a75-4f8b-9e20-4f4e6fa2664d.png">
+
+<img width="490" alt="Screenshot 2023-04-30 at 08 33 20" src="https://user-images.githubusercontent.com/108524172/235341440-a7101109-7de5-45e3-9af6-2740d6b5579c.png">
+
 
 ### Register 
 - The user will be able to easily sign up as a user using the below form.
