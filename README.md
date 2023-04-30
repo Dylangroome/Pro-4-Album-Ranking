@@ -175,25 +175,26 @@ Dylan Groome
 
 
 ### Footer
-- The footer links directly to the social media pages of the plant care blog.
-- There is a subtle hover state on each icon for better user experience.
+
+<img width="1029" alt="Screenshot 2023-04-30 at 08 38 30" src="https://user-images.githubusercontent.com/108524172/235341590-abe2f33b-cfe0-4ea5-bf9e-fb08e07f16de.png">
+
 
 ### Error 404/403/500
 - There are error pages in place in case a user is taken to a restricted area or the page doesn't exist.
 - The return home button will take the user back to the plant list page.
 
-<img width="460" alt="image" src="https://user-images.githubusercontent.com/97494262/210073145-f3d43565-d722-4a8f-866c-2ed0e1fc50ec.png">
-<img width="613" alt="image" src="https://user-images.githubusercontent.com/97494262/210073167-f80d0d34-41c5-4fb9-a8ac-53da96d3631f.png">
-<img width="538" alt="image" src="https://user-images.githubusercontent.com/97494262/210073183-e8f315ba-264c-47cc-a540-e16677fe583d.png">
+<img width="1035" alt="Screenshot 2023-04-30 at 08 39 02" src="https://user-images.githubusercontent.com/108524172/235341614-5f94100b-2ce3-430d-aff4-02778a8073c4.png">
+
 
 ### Features for Future Development
-- It will become less efficient for the user to scroll through many posts in the list view so a search bar will allow users to find specific plants they want to read more about.
-- It would increase user experience to add a method to 'save' blog posts so users can keep their favourite plants in one place.
-- To increase user interactivity from readers, users could rate blog posts on how helpful the information was and give feedback.
-- Pending comments can be added so users are aware they are awaiting approval. 
+- A details page for each song of the albums
+- a side by side album comparison for ranking 
+- a global leaderboard of the highest rated albums
+- more artist detail pages 
+- more albums
 
 ## DATA MODEL
-<img width="484" alt="image" src="https://user-images.githubusercontent.com/97494262/209538748-6f3cdc41-16c5-43ab-94a8-2341239ffc78.png">
+
 
 - [X] C - Site users can create/register their own profile to interact with the plant posts.
 - [X] R - Site users can open and read the plant blog posts and read comments from other users.
