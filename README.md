@@ -233,13 +233,13 @@ This data model is used to store the comments of the users along with their sent
 | Field       | Data Type         | Purpose                                  | Form Validation                  |
 |-------------|-------------------|------------------------------------------|----------------------------------|
 | pk          | unique Identifier |                                          |                                  |
-| stock       | ForeignKey        | One to many relation w/StockInfo         | required but automatic           |
+| album       | ForeignKey        | One to many relation w/Album             | required but automatic           |
 | name        | CharField         | To be shown below comment                | required but automatic           |
 | email       | EmailField        | To be stored in database                 | required but automatic           |
 | body        | TextField         | To be shown, it is the comment           | required                         |
 | created_on  | DateTimeField     | To be shown below the comment            | required but automatic           |
 | approved    | BooleanField      | To let admin approve before publishing   | required, auto is False (*)      |
-| sentiment   | CharField         | To express the sentiment                 | required, default is HOLD        |
+| rate        | CharField         | To express the rateing                   | required, default is 7           |
 
 (*) Please notice that in the current version and for better interactivity for the users, not yet approved comments are also shown on the site.
 
