@@ -290,49 +290,10 @@ The application has been tested with Chrome Dev Tools Lighthouse Testing which t
 
 ![Account]<img width="612" alt="Screenshot 2023-04-30 at 09 43 06" src="https://user-images.githubusercontent.com/108524172/235344072-f5a4e9c4-8a1d-42db-bd6a-74fbf3b5cea7.png">
 
-## HTML Validator
+* ### HTML Validator 
+All HTML pages' code successfully passed through HTML Validator with no errors.
+![HTML Validator]<img width="1052" alt="Screenshot 2023-04-30 at 10 00 44" src="https://user-images.githubusercontent.com/108524172/235344793-764e4313-18d1-4286-b2e3-5b08c687c0d4.png">
 
-When running my HTML code through the [HTML Validation service](https://validator.w3.org/), I encountered a few minor errors that have now all be corrected.
-
-This is the home page -
-
-![HTML error index page](static/readme/escaperoom-html1.jpg)
-
-Fixed
-
-![Home page fix](static/readme/html-test1.jpg)
-
-This is the rooms page -
-
-![HTML room page](static/readme/escaperoom-html2.jpg)
-
-Fixed
-
-![Room page fix](static/readme/html-test2.jpg)
-
-This is the booking page
-
-![Booking page](static/readme/html-test3.jpg)
-
-This is the account with booking page
-
-![Account with booking](static/readme/html-test4.jpg)
-
-This is the account without bookings page
-
-![Account without booking](static/readme/html-test5.jpg)
-
-This is the thank you page
-
-![Thank you](static/readme/html-test6.jpg)
-
-This is the 404 error page
-
-![404 page](static/readme/html-test7.jpg)
-
-This is the 500 error page
-
-![500 page](static/readme/html-test8.jpg)
 
 ## CSS Validator
 When running my CSS code through the [CSS Validation service](https://jigsaw.w3.org/css-validator/) I had no bugs.
