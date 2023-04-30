@@ -117,7 +117,7 @@ class ArtistDetail(View):
             "artist.html",
             context,
         )
-    
+
     
 class PostLike(View):
     
