@@ -283,10 +283,12 @@ The application has been tested with Chrome Dev Tools Lighthouse Testing which t
 
 
 ### Artist Page
-![Artist](
+![Artist] <img width="588" alt="Screenshot 2023-04-30 at 09 41 31" src="https://user-images.githubusercontent.com/108524172/235344041-4d7245db-e678-4851-b246-b490f20d39be.png">
+
 
 ### Account Page
-![Account]
+
+![Account]<img width="612" alt="Screenshot 2023-04-30 at 09 43 06" src="https://user-images.githubusercontent.com/108524172/235344072-f5a4e9c4-8a1d-42db-bd6a-74fbf3b5cea7.png">
 
 ## HTML Validator
 
