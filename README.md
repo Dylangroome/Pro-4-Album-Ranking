@@ -264,76 +264,262 @@ This data model is used to store the comments of the users along with their sent
 
 (*) Please notice that in the current version and for better interactivity for the users, not yet approved comments are also shown on the site.
 
-## TESTING
+# Testing
 
-### Validation Testing
-- HTML
-   - No errors were returned when passing through the official [HTML validator]("https://validator.w3.org/nu/?doc=https%3A%2F%2Fcaramcavinchey.github.io%2Frock-paper-scissors%2F").
+## Lighthouse
+The application has been tested with Chrome Dev Tools Lighthouse Testing which tests the application for:
 
-**Post List**
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210156718-b0e52c29-0edf-46b7-9e13-eed62b1bb787.png">
-   
-**Post Detail**
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210156567-eb2b02a0-596a-4a52-ade9-213ee00dfbae.png">
+* Performance
+* Accessibility
+* Best Practices
+* SEO
 
-**Sign up**
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210156724-f2aab13c-453a-4556-9a5a-af64cff6f888.png">
+### Home Page
+![Home page](static/readme/Homepage-lighthouse.jpg)
 
-**Sign in**
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210156731-bf8dfff2-c326-4ebb-a826-905e213f9536.png">
+### Room Page
+![Room page](static/readme/room-lighthouse.jpg)
 
-**Edit Comment**
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210156740-9699a4c3-1671-489f-b869-760ba3de554f.png">
+### Booking Page
+![Booking](static/readme/book-lighthouse.jpg)
 
-- CSS
-   - No errors were found when passing through the [CSS validator]("https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcaramcavinchey.github.io%2Frock-paper-scissors%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en").
+### Account Page
+![Account](static/readme/account-lighthouse.jpg)
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210075568-6efc11bf-8f09-4ec8-8eae-c3936a1678df.png">
+## HTML Validator
 
-- JavaScript
-   - No errors were found when passing through the [JS validator]("https://jshint.com/").
-   
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210155726-28197ad7-5f34-49d1-bc1c-5991f2b29533.png">
+When running my HTML code through the [HTML Validation service](https://validator.w3.org/), I encountered a few minor errors that have now all be corrected.
 
-### Cross Browser and Cross Device Testing
-- The below combination of devices, browsers, and operating system were used to test the website. A range of viewport sizes were checked to see if users would have the same experience across multiple devices and browsers.
+This is the home page -
 
-| **TOOL / Device**           | **BROWSER**      | **OS**  | **SCREEN WIDTH** |
-|-----------------------------|------------------|---------|------------------|
-| dev tools: Galaxy Fold      | Chrome           | android | 280 x 653 px     |
-| dev tools: iPhone SE        | safari           | iOs     | 375 x 667 px     |
-| dev tools: Pixel 2          | Chrome           | android | 411 x 731        |
-| real phone: iPhone XR       | safari           | iOs     | 414 x 896 px     |
-| browserstack: Nexus 7       | Firefox          | android | 960 x 600 px     |
-| browserstack: iPhone 13 Pro | safari           | iOs     | 390px × 844px    |
-| real tablet: iPad Pro 11    | Chrome           | iOs     | 834 x 1075 px    |
-| real laptop: Macbook Pro    | Firefox & Chrome | iOs     | 1400 x 766 px    |
-| broswerstack                | Firefox          | iOs     | 1440 x 672 px    |
-| browserstack                | Edge 99          | windows | 1440 x 672 px    |
+![HTML error index page](static/readme/escaperoom-html1.jpg)
 
-### Manual Testing
-- You can view manual testing of the website [here](https://docs.google.com/spreadsheets/d/123Pia98Ms_Fe6at0hPnAWhcNrmeVc4X2RLYmD7VsqX4/edit?usp=sharing).
+Fixed
 
-### Automatic Testing
-- Manual testing was done due to time constraints.
+![Home page fix](static/readme/html-test1.jpg)
 
-### Outstanding Defects
-- There are no outstanding defects.
+This is the rooms page -
 
-### Defects of Note
-- The user story for [OPEN A POST](https://github.com/CaraMcAvinchey/stem-and-leaf-blog/issues/8) had multiple challenges including styling issues with the summary card, the likes/comments area and rendering of the plant detail model information. 
- - The styling challenges were solved using margins and restructuring of some div elements.
- - The comments/likes area required some guidance from my mentor to establish what the user sees when logged in, logged out and restructured the template from there.
+![HTML room page](static/readme/escaperoom-html2.jpg)
 
-## ACCESSIBILITY
+Fixed
 
-### Lighthouse Audit
-- The deployed website was run through lighthouse to check performance, accessibility, best practices and SEO scores.
+![Room page fix](static/readme/html-test2.jpg)
 
-<img width="650" alt="image" src="https://user-images.githubusercontent.com/97494262/210155754-2d11ca71-a553-47a9-a94b-41fd4c1aebd9.png">
+This is the booking page
 
-### Keyboard Navigation
-- The users will be able to use the tab button to navigate the website if required.
+![Booking page](static/readme/html-test3.jpg)
+
+This is the account with booking page
+
+![Account with booking](static/readme/html-test4.jpg)
+
+This is the account without bookings page
+
+![Account without booking](static/readme/html-test5.jpg)
+
+This is the thank you page
+
+![Thank you](static/readme/html-test6.jpg)
+
+This is the 404 error page
+
+![404 page](static/readme/html-test7.jpg)
+
+This is the 500 error page
+
+![500 page](static/readme/html-test8.jpg)
+
+## CSS Validator
+When running my CSS code through the [CSS Validation service](https://jigsaw.w3.org/css-validator/) I had no bugs.
+
+![CSS Validate](static/readme/css-validate.jpg)
+
+## Python Vaildator
+When running my code through the [CI Python Linter Validation](https://pep8ci.herokuapp.com/) I had no bugs or errors. Ive decided to ignore the 2 lines too long errors
+
+This is in my webapp - admin.py
+
+![Python screenshot](static/readme/python-1.jpg)
+
+This is in my webapp - forms.py
+
+![Python screenshot](static/readme/python-2.jpg)
+
+This is in my webapp - urls.py
+
+![Python screenshot](static/readme/python-3.jpg)
+
+This is in my webapp - views.py
+
+![Python screenshot](static/readme/python-4.jpg)
+
+![Python screenshot](static/readme/python-5.jpg)
+
+
+## JSHint Validator
+When running my JavaScript through [JSHint validator](https://jshint.com/) I had no bugs or erros.
+
+* This is for the datepicker
+
+![Javascript screenshot](static/readme/escaperoom-js.jpg)
+
+* This is for the map. I have a couple undefined variable however I used this website to write the code. [Google maps code](https://developers.google.com/maps/documentation/javascript/adding-a-google-map)
+
+![Javascript maps screenshot](static/readme/escaperoom-jsvalidator.jpg)
+
+## Defects
+
+Phone number allows the user to add letters. This is ok as its low level. The email is more reliable and will be used to contact the user first.
+
+## Manual
+
+Testing has been done manually with the google chrome dev tools to make sure the website is fully responsive. I have checked all pages at all key breakpoints to make sure the layout remains user friendly and nothing clashes.
+
+I manually tested all buttons, forms and links to make sure the correct action took place. Here are tables to show the testing.
+
+### Nav bar
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| logo   | Takes you to the home page     | PASS    | 
+| Home link     |   Takes you to the home page     | PASS      |
+| Rooms link   | Takes you to the rooms page     | PASS    | 
+| Book link     |   Takes you to the booking page or sign in/sign up page     | PASS      |
+| login/sign up link   | Takes you to the sign in page     | PASS    | 
+
+### Footer
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| google maps   | allows you to see the location     | PASS    | 
+| Facebook link     |   Takes you to the facebook page     | PASS      |
+| Instagram link   | Takes you to the instagram page     | PASS    | 
+| Twitter link     |   Takes you to the twitter page     | PASS      |
+
+### Home page
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| hero button   | Takes you to the booking page or sign in/sign up page     | PASS    | 
+| popular room link     |   Takes you to the booking page or sign in/sign up page     | PASS      |
+
+### Rooms page
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| rooms book button   | Takes you to the booking page or sign in/sign up page     | PASS    |
+
+### Create an account or Sign in to make a booking page
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| sign in button   | Takes you to the  sign in   | PASS    | 
+| sign up button     |   Takes you to the sign up page     | PASS      |
+
+### Create an account form page
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| sign in link   | redirects to login form   | PASS    | 
+| All inputs   | make sure they're all valid   | PASS    | 
+| sign up button     |   Creates your account and redirects to home page     | PASS      |
+
+### Sign in form page
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| Sign up link   | redirects to create an account form   | PASS    | 
+| All inputs   | make sure they're all valid   | PASS    | 
+| sign in button     |   Sign in to your account and redirects to home page     | PASS      |
+
+### Nav bar dropdown once logged in
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| Dropdown   | brings a dropdown for two options   | PASS    | 
+| booking link   | redirects to manage booking page   | PASS    | 
+| logout link     |   takes you to confirm logout     | PASS      |
+
+### Booking page
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| All inputs   | make sure all inputs are valid before submitting   | PASS    | 
+| datepicker   | datepicker should appear   | PASS    |
+| timepicker   | timepicker should appear   | PASS    | 
+| submit button   | submit form and a confirmation message appears on new page   | PASS    | 
+
+### Manage booking page
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| Update button   | takes you to the booking form   | PASS    | 
+| Cancel button   | bbrings up an alert to confirm cancel   | PASS    |
+
+### Manage booking bo booking page
+
+| What is being tested | Whats supposed to happen | Pass/Fail |
+| --- | --- | --- |
+| Book button   | takes you to the booking form   | PASS    | 
+
+
+
+# Security Features
+
+* Users cannot deduce the delete url and delete others bookings, they get a custom 500 error page if they do this when not logged in and a warning message if they are authenticated
+
+* Users cannot deduce the update ulr and update others’ bookings, they get a custom 500 error page if they attempt to do this.
+
+* Booking Update: Message Failure trying to book a time already booked
+* Booking Update: Message failure if not logged in
+* Booking Update: Message failure if they dont own booking
+* Booking Cancel: Message Failure if not logged in
+* Booking Cancel: Message failure if they dont own booking
+* Place Booking: User not logged in
+* Place Booking: Time & room already booked
+* 500 Page: This can be activated for many reasons, but you are able to get there if you try to delete a booking that you don’t own, or if you try to access a booking that doesn’t exist
+
+## User authentication
+* Django's all auth was used for login and sign up functionality.
+* Django's superuser is used to limit access to admin panel.
+
+## Form Validation
+* Extensive form validation is used on front end as well as backend.
+
+## Database Security
+* All secret keys connecting the database are stored in a env.py file that is never pushed to github. Furthermore, Cross-Site Request Forgery (CSFR) tokens were used on all forms throughout the project.
+
+# Bugs
+
+## Solved
+
+* I had some contrasting issues which I fixed by using devtools and using their recommended colours
+
+![Contrast](static/readme/readme-contrast1.jpg)
+
+* I had two main bugs in my project. These two bugs would allow hackers to delete and update someone else's bookings. I first had to check if the user that was trying to update or cancel the booking, owned that booking. I done that through this code - 
+
+![Bug](static/readme/escaperoom-bug.jpg)
+
+* Then I had to write an if statement to allow the authenticated user to continue their action. If not they get a custom 500 error page.
+
+![500](static/readme/escaperoom-bug500.jpg)
+
+* I had an issue when refresing on thank you booking page, it sends user another email. I had my email in the wrong section of my code and was a simple fix with a quick move. 
+
+![Email code](static/readme/escaperoom-bugemail.jpg)
+
+* I also had a bug with my messages. If a user were to sign in and sign out, then sign in to another account you would get a long list of messages appear on the my bookings page.
+
+![Message bug](static/readme/escaperoom-bugmessage.jpg)
+
+* To fix this I moved my for message loop out of my_booking.html into the base.html. This meant that the message would appear one at a time instead of a build up of messages once you opened the my_booking.html.
+
+## Left to solve
+
+There are no more bugs to solve as of 18/01/2023
+
 
 ## TECHNOLOGIES USED
 - GitPod
