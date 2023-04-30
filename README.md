@@ -67,33 +67,36 @@ Dylan Groome
 ## DESIGN CHOICES
 
 ### Colors
-<img width="538" alt="image" src="https://user-images.githubusercontent.com/97494262/209437405-63db90ed-fd86-4285-8a19-002c73a2d1a7.png">
- 
-- The natural color palette links to the theme of plants and plant care. 
-- The headings, icons and body text are darker to ensure clear contrast and readability for the user across the site.
-- The green header and footer ensures clear contrast and delineation between sections.
-- Due to the lighthouse score for accessibility, the background color for the header and footer was adjusted:
 
-<img width="400" alt="image" src="https://user-images.githubusercontent.com/97494262/210070268-17725578-409a-4278-a99e-60e844ddb1b8.png">
+<img width="9" alt="Screenshot 2023-04-30 at 07 34 06" src="https://user-images.githubusercontent.com/108524172/235340607-ebbbbce8-c465-413d-857f-649fcd6f1a07.png">
+
+ 
+- A plain white is used for ease of navigation and to highlight kee elements like the album’s. 
+- The headings, icons and body text are darker to ensure clear contrast and readability for the user across the site.
+
+<img width="308" alt="Screenshot 2023-04-30 at 07 41 39" src="https://user-images.githubusercontent.com/108524172/235340692-f9f176a2-f719-468d-91e7-bc083e190b3e.png">
+
 
 ### Typography
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/209437426-7c754f60-85b0-4d60-9f17-04caedb8f635.png">
 
-- The font combination was chosen using guidance article from Mai Knoblovits [here](https://artisanthemes.io/great-google-font-combinations-ready-use/).
-- The logo and headings use Amatic SC with a fallback of cursive and the body text uses Roboto Condensed with a fallback of san-serif.
+<img width="773" alt="Screenshot 2023-04-30 at 07 49 31" src="https://user-images.githubusercontent.com/108524172/235340730-65c202b4-e1c8-408c-bc64-355e7ae6c0d0.png">
+
+- The font fst-italic [here](https://bootstrapshuffle.com/classes/typography/fst-italic).
+
 - The choice of fonts were selected and installed using [Google Fonts](https://fonts.google.com/).
 
 ### Images/Icons
-<img width="351" alt="image" src="https://user-images.githubusercontent.com/97494262/209437645-30a1ff77-27cb-4eea-a342-6aa1592cb81d.png">
 
-- The icons were chosen to provide clear understanding of each plant and its care requirements.
-- Each summary card has the same information structure with all icons standard throughout the site.
+<img width="319" alt="Screenshot 2023-04-30 at 07 53 50" src="https://user-images.githubusercontent.com/108524172/235340817-65b96128-ed69-409a-beed-e5f94be1d8a3.png">
+
+
+- The icons were chosen to provide clear understanding of each album.
+- Each summary has the same information structure with all icons standard throughout the site.
 
 ### Animations
-- The navbar, social icons and buttons across the site have a subtle grow effect when hovered over by the user.
-- All links have a color change and underlined effect when hovered for clear distinction from the body text.
 
-### Responsiveness
+### Responsiveness![Uploading Screenshot 2023-04-30 at 07.49.31.png…]()
+
 - The website was designed mobile-first using flexbox to ensure responsiveness throughout the website.
 - The standard grid from Bootstrap was used to achieve this.
 
