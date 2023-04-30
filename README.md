@@ -278,14 +278,15 @@ The application has been tested with Chrome Dev Tools Lighthouse Testing which t
 ![Home page]<img width="652" alt="Screenshot 2023-04-30 at 09 33 38" src="https://user-images.githubusercontent.com/108524172/235343675-d49cf29b-b2f0-4c41-9be9-35b612ba0638.png">
 
 
-### Room Page
-![Room page](static/readme/room-lighthouse.jpg)
+### Album Page
+![Album page]<img width="592" alt="Screenshot 2023-04-30 at 09 38 26" src="https://user-images.githubusercontent.com/108524172/235343945-4817cf6c-e400-4b15-895d-15301df6f490.png">
 
-### Booking Page
-![Booking](static/readme/book-lighthouse.jpg)
+
+### Artist Page
+![Artist](
 
 ### Account Page
-![Account](static/readme/account-lighthouse.jpg)
+![Account]
 
 ## HTML Validator
 
