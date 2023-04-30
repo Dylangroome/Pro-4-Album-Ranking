@@ -59,10 +59,19 @@ Dylan Groome
 ### Project Goal
 * The aim of the project is to provide a friendly informative interactive space  about popular artists most influential works and to allow for conversation and sharing of experiences of them.
 
+## Agile Methodology
+
+An Agile approach to creating this app has been applied. Githubs projects was used to track user stories and implement ideas based on their level of importance for allowing use of the app with no loss of functionality or user experience.
+
+
+By using AGILE methodology in this project I was able to deliver a site which had all required functionality and was able to give even more extra detail when going through the project.
+
+I used GitHub projects board to create the user stories and keep track of my tasks.
+
 ### User Stories
 * 
 * https://github.com/users/Dylangroome/projects/9/views/1
-*
+* 
  
 ## DESIGN CHOICES
 
