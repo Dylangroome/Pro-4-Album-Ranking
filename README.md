@@ -95,7 +95,7 @@ Dylan Groome
 
 ### Animations
 
-### Responsiveness![Uploading Screenshot 2023-04-30 at 07.49.31.png…]()
+### Responsiveness
 
 - The website was designed mobile-first using flexbox to ensure responsiveness throughout the website.
 - The standard grid from Bootstrap was used to achieve this.
@@ -119,22 +119,20 @@ Dylan Groome
 - There is a subtle hover state on each of the navigation items for better user experience.
 - For mobile devices, the navigation toggles to a hamburger menu.
 
-### Plant List
-- The users will have a list of posts with a title, excerpt and summary card of care required for each plant.
-- The image and title are linked, so users may click on either and be taken to the plant detail page.
+### Album List
+- The users will have a list of albums with a title, excerpt and detailed info for each album.
+- The image and title are linked, so users may click on either and be taken to the album detail page.
 - There is a hover state on the title to show the user they can click on the post.
-- This summary card is later repeated in each plant detail post for continuity across the site.
 
-<img width="276" alt="image" src="https://user-images.githubusercontent.com/97494262/210070669-031252b8-33af-4c74-9efe-17c2b4278235.png">
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210070722-3dea018c-60c0-4793-847e-d4f9f2cacbdb.png">
+<img width="390" alt="Screenshot 2023-04-30 at 07 58 15" src="https://user-images.githubusercontent.com/108524172/235340998-9f26887a-d73e-45e2-b3fc-af156613bef9.png">
 
-### Plant Detail
-- Each post has a short article about the plant including its care information in detail.
-- The structure of each post is consistent, starting with the card at the top and excerpt from the plant list and then the main content and bulleted list of care instructions at the end. 
 
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/97494262/210071425-5ef9d25e-45f6-4c66-8373-e594f0048770.png">
+### Artist’s Detail
+- Each post has a short article about the artist information in detail.
+- The structure of each post is consistent. 
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/210071401-56dd2bb4-83d0-4587-931a-3ef062a84776.png">
+<img width="725" alt="Screenshot 2023-04-30 at 08 23 38" src="https://user-images.githubusercontent.com/108524172/235341062-45adae13-4e99-469b-bd71-d186bc39e044.png">
+
 
 ### Likes
 - If the user isn't logged in, they will see the below information:
