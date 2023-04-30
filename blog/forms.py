@@ -7,12 +7,15 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body', 'rate')
+        labels = {
+            "body": "Share your idea on this ticker",
+        }
 
 
 class EditForm(forms.ModelForm):
     '''
     Form to edit the body of a comment
-    and change sentiment
+    and change ratings
     '''
     class Meta:
         """
@@ -22,5 +25,5 @@ class EditForm(forms.ModelForm):
         fields = ('body', 'rate')
         labels = {
             "body": "Post a comment:",
-            "rate": "Change your sentiment:"
+            "rate": "Change your rating:"
         }

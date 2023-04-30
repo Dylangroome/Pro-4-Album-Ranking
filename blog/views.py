@@ -84,8 +84,8 @@ class AlbumDetail(View):
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.album = album
-            comment.save()
             comment.approved = True
+            comment.save()
         else:
             comment_form = CommentForm()
 
@@ -141,12 +141,6 @@ class CommentDelete(DeleteView):
     model = Comment
     template_name = "delete_comment.html"
 
-    def dispatch(self, request, *args, **kwargs):
-        # here you can make your custom validation for any particular user
-        if not request.user.is_superuser:
-            raise PermissionDenied()
-        return super().dispatch(request, *args, **kwargs)
-
     def delete(self, request, *args, **kwargs):
         return super(CommentDelete, self).delete(request, *args, **kwargs)
 
@@ -166,12 +160,6 @@ class CommentEdit(UpdateView):
     model = Comment
     form_class = EditForm
     template_name = "edit_comment.html"
-
-    def dispatch(self, request, *args, **kwargs):
-        # here you can make your custom validation for any particular user
-        if not request.user.is_superuser:
-            raise PermissionDenied()
-        return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         """
