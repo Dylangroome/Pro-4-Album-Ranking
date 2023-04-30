@@ -202,19 +202,21 @@ Dylan Groome
 - [X] D - Site users can eliminate their like if desired on a plant detail post.
 
 
-* ### StockInfo
-This data model is used to store all the relevant information about a listed stock:
+* ### Album
+This data model is used to store all the relevant information about albums:
 
 | Field       | Data Type         | Purpose                          | Form Validation                  |
 |-------------|-------------------|----------------------------------|----------------------------------|
 | pk          | unique Identifier |                                  |                                  |
-| title       | CharField         | Company Name                     | required, max length 200, unique |
-| ticker      | CharField         | Official ticker of the company   | required, max lenght 6, unique   |
+| title       | CharField         | Album Nmae                       | required, max length 200, unique |
+| year        | CharField         | Album Year                       | max_length=25, blank=True        |
+| Rated       | CharField         | Album rateing                    | max_length=10, blank=True        |
+| released    | CharField         | Album release                    | max_length=25, blank=True        |
 | slug        | SlugField         | Urls                             | required, unique                 |
-| author      | ForeignKey        | Stores the author of the update  | required                         |
-| updated_on  | DateTimeField     | Timestamp of the update          | automatic                        |
-| description | TextField         | Business Description             | required                         |
-| logo_image  | CloudinaryField   | To store company logo            | not required                     |
+| content     | textfield         | for text                         |                 |
+| artist      | ManyToManyField   | link to artist                   | Artist, blank=True               |
+| genre       | IntegerField      | music genre                      | choices=GENRE_CHOICES, default=1 |
+| featured_image   | CloudinaryField   | To store logo               | image', default='placeholder'    |
 | excerpt     | TextField         | Business summary                 | not required                     |
 | created_on  | DateTimeField     | Timestamp of the creation        | automatic                        |
 | status      | IntegerField      | Draft vs Published               | required, default is Draft       |
