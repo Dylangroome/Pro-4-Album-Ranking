@@ -54,7 +54,6 @@ Dylan Groome
     + [Media](#media)
   * [ACKNOWLEDGEMENTS](#acknowledgements)
 
-## UX
 
 ### Project Goal
 * The aim of the project is to provide a friendly informative interactive space  about popular artists most influential works and to allow for conversation and sharing of experiences of them.
@@ -111,15 +110,22 @@ I used GitHub projects board to create the user stories and keep track of my tas
 
 ## WIREFRAMES
 
-### Post List
-- The post list page was designed using cards to show a quick summary of each plant.
-- The user can click and find out more about a plant that interests them.
-<img width="636" alt="image" src="https://user-images.githubusercontent.com/97494262/209437372-83b2bc1e-68a0-4a75-8e86-d78b69df4a7d.png">
+### Home
+- The home page was designed using cards to show a quick summary of each albume.
+- The user can click and find out more about a album that interests them.
+![home](https://user-images.githubusercontent.com/108524172/235346650-a8d20d67-7777-4871-91cb-3537402a8f04.png)
 
-### Post Detail
-- Each blog post provides detail about the plant and a list of instructions to care for it. 
+
+### Album Detail
+- Each album post provides detail about the album. 
 - The registered user can also comment and like the post if desired.
-<img width="611" alt="image" src="https://user-images.githubusercontent.com/97494262/209437385-b8be9fe9-bbbb-4110-a9af-e0f5239f3cc9.png">
+![album](https://user-images.githubusercontent.com/108524172/235346676-1e8987d7-e4d9-428a-a061-ef2785e409e2.png)
+
+### Artist Detail
+- Each artist post provides detail about the artist. 
+
+![artist](https://user-images.githubusercontent.com/108524172/235346710-d531284d-af2c-4fcf-9886-643f603081de.png)
+
 
 ## FEATURES/STRUCTURE
 
