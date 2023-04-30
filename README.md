@@ -298,7 +298,8 @@ All HTML pages' code successfully passed through HTML Validator with no errors.
 ## CSS Validator
 When running my CSS code through the [CSS Validation service](https://jigsaw.w3.org/css-validator/) I had no bugs.
 
-![CSS Validate](static/readme/css-validate.jpg)
+![CSS Validate]<img width="1030" alt="Screenshot 2023-04-30 at 10 07 51" src="https://user-images.githubusercontent.com/108524172/235345107-b3a0f776-130b-408f-8be1-5b11e4b50bab.png">
+
 
 ## Python Vaildator
 When running my code through the [CI Python Linter Validation](https://pep8ci.herokuapp.com/) I had no bugs or errors. Ive decided to ignore the 2 lines too long errors
