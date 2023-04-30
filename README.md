@@ -11,7 +11,7 @@ Dylan Groome
 
 
 ## TABLE OF CONTENTS
-- [STEM & LEAF - A PLANT CARE SPACE FOR BEGINNERS](#stem---leaf---a-plant-care-space-for-beginners)
+- [Album Review]
   * [Author](#author)
   * [Project Overview](#project-overview)
   * [UX](#ux)
@@ -466,14 +466,14 @@ No bugs
 - The Code Institute 'I Think, Therefore I Blog' walkthrough project assisted and guided in the setup and basic structure of this project.
 - The Stockbook Project by Massimo Ranalli assisted with the setup of the edit/delete functions for comments as well as the messaging alerts.
 - Code Institute Student Template: [gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template).
-- The articles on the blog were written myself and any additional helpful articles were linked to for the user to access for more information.
+- The articles on the blog were NOT written BY myself  helpful articles were linked to for the user to access for more information.
+- https://www.youtube.com/watch?v=FawGmAas4h0&list=PL9tgJISrBWc6ktmvTSLGrn055XzVb0OwZ
+- https://www.rollingstone.com/music/music-album-reviews/nothing-was-the-same-125752/
+- https://www.udiscovermusic.com/artist/drake/
+- https://www.biography.com/musicians/j-cole
+- https://www.britannica.com/facts/Kanye-West
+- https://www.udiscovermusic.com/artist/kendrick-lamar/
 
-### Media
-- The fonts were chosen with guidance from an article written by Mai Knoblovits [here](https://artisanthemes.io/great-google-font-combinations-ready-use/).
-- The colors for the website was generated using [Color Space]([https://coolors.co/image-picker](https://mycolor.space/?hex=%2333C883&sub=1)).
-- The plant images were sourced using [Pexels](https://www.pexels.com) and [Pixabay](https://pixabay.com/).
-- The icons for the favicon, footer, about page and location headings were taken from [Font Awesome](https://fontawesome.com/).
-- The favicon image was converted using [Favicon.io](https://favicon.io/).
 
 ## ACKNOWLEDGEMENTS
 - Thank you to my mentor for continuous helpful feedback and support throughout the project.
