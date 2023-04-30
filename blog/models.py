@@ -9,21 +9,22 @@ STATUS = ((0, "Draft"), (1, "Published"))
 GENRE_CHOICES = ((1, "HipPop"), (2, "RnB"))
 
 RATE_CHOICES = (
-    (1, '1 - Burn it'),
-    (2, '2 - Mute'),
-    (3, '3 - Terrible'),
-    (4, '4 - Bad'),
-    (5, '5 - OK'),
-    (6, '6 - Listenable'),
-    (7, '7 - Good'),
-    (8, '8 - Recommended'),
-    (9, '9 - Perfect'),
-    (10, '10 - Master Piece'), 
+    ('1', '1 - Burn it'),
+    ('2', '2 - Mute'),
+    ('3', '3 - Terrible'),
+    ('4', '4 - Bad'),
+    ('5', '5 - OK'),
+    ('6', '6 - Listenable'),
+    ('7', '7 - Good'),
+    ('8', '8 - Recommended'),
+    ('9', '9 - Perfect'),
+    ('10', '10 - Master Piece'), 
 )
 
 
 class Artist(models.Model):
     title = models.CharField(max_length=70, unique=True)
+    piece = models.TextField()
     slug = models.SlugField(null=True, unique=True)
     featured_image = CloudinaryField('image', default='placeholder')
 
@@ -68,7 +69,7 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    rate = models.CharField(max_length=6, choices=RATE_CHOICES, default=7)
+    rate = models.CharField(max_length=6, choices=RATE_CHOICES, default='7')
 
     class Meta:
         ordering = ["created_on"]

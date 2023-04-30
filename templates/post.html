@@ -103,47 +103,43 @@
                                       <!-- Body of the comment -->
                                       {{ comment.body | linebreaksbr }}
                                       <p>
-                                        {% if comment.rate == 1 %}
+                                        {% if comment.rate == '1' %}
                                         Rating: <span class="text-success fw-bold"><i class="fas fa-arrow-up"></i>
-                                            Bullish</span>
-                                        {% elif comment.rate == 2 %}
-                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
-                                            Bearish</span>
-                                        
-                                        {% elif comment.rate == 2 %}
+                                            1</span>
+                                        {% elif comment.rate == '2' %}
                                         Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
                                             2</span>
                                         
-                                        {% elif comment.rate == 3 %}
+                                        {% elif comment.rate == '3' %}
                                         Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
                                             3</span>
 
-                                        {% elif comment.rate == 4 %}
+                                        {% elif comment.rate == '4' %}
                                         Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
                                             4</span>
                                         
-                                        {% elif comment.rate == 5 %}
-                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                        {% elif comment.rate == '5' %}
+                                        Rating: <span class="text-success fw-bold"><i class="fas fa-arrow-up"></i>
                                             5</span>
                                         
-                                        {% elif comment.rate == 6 %}
-                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                        {% elif comment.rate == '6' %}
+                                        Rating: <span class="text-success  fw-bold"><i class="fas fa-arrow-up"></i>
                                             6</span>
                                         
-                                        {% elif comment.rate == 7 %}
-                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                        {% elif comment.rate == '7' %}
+                                        Rating: <span class="text-success  fw-bold"><i class="fas fa-arrow-up"></i>
                                             7</span>
 
-                                        {% elif comment.rate == 8 %}
-                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                        {% elif comment.rate == '8' %}
+                                        Rating: <span class="text-success  fw-bold"><i class="fas fa-arrow-up"></i>
                                             8</span>
                                         
-                                        {% elif comment.rate == 9 %}
-                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                        {% elif comment.rate == '9' %}
+                                        Rating: <span class="text-success  fw-bold"><i class="fas fa-arrow-up"></i>
                                             9</span>
                                         
-                                        {% elif comment.rate == 10 %}
-                                        Rating: <span class="text-danger fw-bold"><i class="fas fa-arrow-down"></i>
+                                        {% elif comment.rate == '10' %}
+                                        Rating: <span class="text-success  fw-bold"><i class="fas fa-arrow-up"></i>
                                             10</span>
 
                                                 

@@ -17,8 +17,8 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
     # can override local to False here if you want to test things like 404, 500 error
-    DEBUG = True
-else:
+#     DEBUG = True
+# else:
     DEBUG = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,6 +34,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 ALLOWED_HOSTS = ['pro-4-album-ranking.herokuapp.com', 'localhost']
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 # Application definition
