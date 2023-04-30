@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.template import loader
 from django.views.generic import DeleteView, UpdateView
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views.generic.base import TemplateView
 from .models import Album, Artist, Comment
 from .forms import CommentForm, EditForm
@@ -129,6 +131,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('album_detail', args=[slug]))
 
 
+@method_decorator(login_required, name="dispatch")
 class CommentDelete(DeleteView):
     """
     If user is logged in:
@@ -138,14 +141,21 @@ class CommentDelete(DeleteView):
     model = Comment
     template_name = "delete_comment.html"
 
+    def dispatch(self, request, *args, **kwargs):
+        # here you can make your custom validation for any particular user
+        if not request.user.is_superuser:
+            raise PermissionDenied()
+        return super().dispatch(request, *args, **kwargs)
+
     def delete(self, request, *args, **kwargs):
         return super(CommentDelete, self).delete(request, *args, **kwargs)
 
     def get_success_url(self, *args, **kwargs):
-        StockDetail.comment_deleted = True
-        return reverse("stock_detail", kwargs={"slug": self.object.stock.slug})
+        AlbumDetail.comment_deleted = True
+        return reverse("album_detail", kwargs={"slug": self.object.album.slug})
 
 
+@method_decorator(login_required, name="dispatch")
 class CommentEdit(UpdateView):
     """
     If user is logged in:
@@ -156,6 +166,12 @@ class CommentEdit(UpdateView):
     model = Comment
     form_class = EditForm
     template_name = "edit_comment.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        # here you can make your custom validation for any particular user
+        if not request.user.is_superuser:
+            raise PermissionDenied()
+        return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         """
@@ -169,4 +185,4 @@ class CommentEdit(UpdateView):
         Upon success returns user to the stock detail page.
         """
         AlbumDetail.comment_edited = True
-        return reverse("`album_detail", kwargs={"slug": self.object.stock.slug})
+        return reverse("album_detail", kwargs={"slug": self.object.album.slug})
