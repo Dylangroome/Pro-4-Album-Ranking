@@ -196,10 +196,10 @@ Dylan Groome
 ## DATA MODEL
 
 
-- [X] C - Site users can create/register their own profile to interact with the plant posts.
-- [X] R - Site users can open and read the plant blog posts and read comments from other users.
-- [X] U - Site users can like a post, updating the details and analytics for a plant detail post.
-- [X] D - Site users can eliminate their like if desired on a plant detail post.
+- [X] C - Site users can create/register their own profile to interact with the album posts.
+- [X] R - Site users can open and read the album blog posts and read comments from other users.
+- [X] U - Site users can like a post, updating the details and analytics for a album detail post.
+- [X] D - Site users can eliminate their like and comment if desired on a album detail post.
 
 
 * ### Album
@@ -222,7 +222,19 @@ This data model is used to store all the relevant information about albums:
 | status      | IntegerField      | Draft vs Published               | required, default is Draft       |
 
 
-- [X] C - Site users can create their own comments using a form on each blog post.
+* ### Artist
+This data model is used to store all the relevant information about artist:
+
+| Field       | Data Type         | Purpose                          | Form Validation                  |
+|-------------|-------------------|----------------------------------|----------------------------------|
+| pk          | unique Identifier |                                  |                                  |
+| title       | CharField         | Album Nmae                       | required, max length 70, unique  |
+| slug        | SlugField         | Urls                             | required, unique                 |
+| piece       | textfield         | for text                         |                                  |
+| featured_image   | CloudinaryField   | To store logo               | image', default='placeholder'    |
+
+
+- [X] C - Site users can create their own comments using a form on each album post.
 - [X] R - Site users can read comments from other users.
 - [X] U - Site users are able to update/edit their comments using a form.
 - [X] D - Site users are able to delete their comments.
